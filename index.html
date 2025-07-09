@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ded's Tour and Travel - Layanan Tour & Rental Mobil Terbaik di Bandung</title>
+    <link rel="icon" href="assets/logo.png" type="image/png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00a65a',
+                        secondary: '#1e3a8a',
+                        accent: '#f59e0b',
+                    },
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-gray-50 min-h-screen flex flex-col">
+    <!-- Header -->
+    <header class="fixed w-full z-50 transition-all duration-300" id="navbar">
+        <nav class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <a href="#" class="flex items-center">
+                <img src="assets/logo.png" alt="Ded's Tour and Travel Logo" class="h-12">
+            </a>
+
+            <div class="hidden md:flex items-center space-x-8">
+                <!-- Penyesuaian menu navbar agar mengarah ke section yang relevan -->
+                <!-- Navbar Desktop -->
+                <ul class="flex space-x-6">
+                    <li><a href="#destinasi" class="navbar-link text-white hover:text-primary font-medium transition">Destinasi</a></li>
+                    <li><a href="#paket-layanan" class="navbar-link text-white hover:text-primary font-medium transition">Paket & Layanan</a></li>
+                    <li><a href="#testimonials" class="navbar-link text-white hover:text-primary font-medium transition">Testimoni</a></li>
+                    <li><a href="#maps" class="navbar-link text-white hover:text-primary font-medium transition">Kontak</a></li>
+                </ul>
+                <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="bg-primary hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition shadow-md">
+                    <i class="fas fa-phone-alt mr-2"></i>Order Sekarang
+                </a>
+            </div>
+            
+            <button id="mobile-menu-button" class="md:hidden text-gray-700">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
+            <div class="container mx-auto px-4 py-3">
+                <!-- Navbar Mobile -->
+                <ul class="space-y-3">
+                    <li><a href="#destinasi" class="block py-2 text-gray-700 hover:text-primary">Destinasi</a></li>
+                    <li><a href="#paket-layanan" class="block py-2 text-gray-700 hover:text-primary">Paket & Layanan</a></li>
+                    <li><a href="#testimonials" class="block py-2 text-gray-700 hover:text-primary">Testimoni</a></li>
+                    <li><a href="#maps" class="block py-2 text-gray-700 hover:text-primary">Kontak</a></li>
+                </ul>
+                <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="mt-4 inline-block bg-primary hover:bg-green-700 text-white px-6 py-2 rounded-full font-medium transition shadow-md">
+                    <i class="fas fa-phone-alt mr-2"></i>Order Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-bg text-white pt-32 pb-20 md:pt-40 md:pb-28 px-4">
+        <div class="container mx-auto max-w-6xl">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">
+                    Jelajahi Bandung dengan Layanan Tour & Travel Terbaik
+                </h1>
+                <p class="text-lg md:text-xl mb-6">
+                    Ingin liburan serta perjalanan bisnis di Bandung tanpa ribet? Kami hadir untuk mengantar Anda ke destinasi terbaik dengan layanan travel yang aman, nyaman, dan terpercaya.
+                </p>
+                <p class="text-lg md:text-xl mb-8">
+                    Nikmati pelayanan tanpa ribet, efisien, armada bersih, driver profesional, dan harga terjangkau. Baik untuk wisata, keperluan bisnis, atau sekedar jalan-jalan santai.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="bg-primary hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg">
+                        <i class="fas fa-phone-alt mr-2"></i>Hubungi Kami
+                    </a>
+                    <a href="#paket-layanan" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-full font-medium transition shadow-lg">
+                        <i class="fas fa-car mr-2"></i>Lihat Armada
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Keunggulan Ded's Tour and Travel</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kami memberikan pengalaman perjalanan terbaik dengan berbagai keunggulan yang tidak akan Anda temukan di tempat lain</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 transition hover:border-primary">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-tags text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Harga Terjangkau & Transparan</h3>
+                    <p class="text-gray-600">Biaya perjalanan yang kompetitif tanpa biaya tersembunyi. Harga jelas sejak awal tanpa tambahan mendadak.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 transition hover:border-primary">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-calendar-check text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Layanan Fleksibel</h3>
+                    <p class="text-gray-600">Bisa antar jemput di lokasi sesuai permintaan pelanggan. Reservasi mudah via WhatsApp atau telepon.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 transition hover:border-primary">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-map-marked-alt text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Paket Wisata & City Tour</h3>
+                    <p class="text-gray-600">Tersedia paket perjalanan wisata dalam kota untuk pengalaman lebih menyenangkan dengan itinerary lengkap.</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-xl border border-gray-100 transition hover:border-primary">
+                    <div class="w-14 h-14 bg-primary bg-opacity-10 rounded-full flex items-center justify-center mb-4">
+                        <i class="fas fa-car text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-secondary mb-3">Armada Terlengkap</h3>
+                    <p class="text-gray-600">Mudah diorder melalui website, mulai dari mobil pribadi, minibus, hingga kendaraan premium. Semua terawat dengan baik.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Destination Gallery -->
+    <section id="destinasi" class="py-16 bg-gray-50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-2">Galeri Wisata</h2>
+          <h3 class="text-xl text-gray-600 mb-6">Pilihan Destinasi Wisata yang Mungkin Ingin Anda Jelajahi</h3>
+          <p class="text-gray-600 max-w-3xl mx-auto">
+            Ingin menikmati keindahan Jawa Barat tanpa ribet? Kami siap mengantar Anda menjelajah destinasi wisata terbaik dengan layanan travel yang aman, nyaman, dan terpercaya.
+          </p>
+        </div>
+        <div id="galeri-destinasi" class="overflow-hidden relative group cursor-grab">
+          <div class="gallery-track flex items-center gap-6 will-change-transform"></div>
+        </div>
+        <div class="text-center mt-8">
+          <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="inline-block bg-primary hover:bg-green-700 text-white px-8 py-3 rounded-full font-medium transition shadow-lg">
+            <i class="fas fa-calendar-alt mr-2"></i>Pesan Sekarang
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vehicle Rental Packages -->
+    <section id="paket-layanan" class="py-16 bg-white mb-0">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-2">Paket Rental Mobil</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Pilih armada sesuai kebutuhan Anda dengan harga terjangkau dan pelayanan terbaik</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- XPANDER -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/Xpander.png" alt="Mobil Mitsubishi Xpander" class="w-full h-full object-cover">
+        <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">POPULER</div>
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">MITSUBISHI XPANDER</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 7 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 700.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+        
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 800.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 950.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 1.100.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- INNOVA REBORN -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/Innova-Reborn.png" alt="Mobil Toyota Innova Reborn" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">TOYOTA INNOVA REBORN</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 7 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 1.200.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 1.200.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 1.200.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 1.400.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 1.600.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 1.800.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- ALPHARD -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/alphart.png" alt="Mobil Toyota Alphard" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">TOYOTA ALPHARD</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 7 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 3.500.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 3.500.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 3.700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 4.000.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 4.300.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 4.800.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- CALYA -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/Calya.png" alt="Mobil Toyota Calya" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">TOYOTA CALYA</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 7 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 550.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 550.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 550.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 650.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 750.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 850.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- SIGRA -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/Calya.png" alt="Mobil Daihatsu Sigra" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">DAIHATSU SIGRA</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 7 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 560.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 560.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 560.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 900.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 1.000.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- AVANZA -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/AVANZA.png" alt="Mobil Toyota Avanza" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">TOYOTA AVANZA</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 7 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 700.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 750.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 850.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 950.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- HIACE COMMUTER -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/hiace.png" alt="Mobil Toyota Hiace Commuter" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">TOYOTA HIACE COMMUTER</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 14 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 1.500.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 1.500.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 1.700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 1.900.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 2.200.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 2.500.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- HIACE PREMIO -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300">
+    <div class="relative h-48 overflow-hidden">
+        <img src="assets/hiace-p.png" alt="Mobil Toyota Hiace Premio" class="w-full h-full object-cover">
+    </div>
+    <div class="p-6">
+        <h3 class="text-xl font-bold text-secondary mb-2">TOYOTA HIACE PREMIO</h3>
+        <p class="text-gray-600 mb-4"><i class="fas fa-users mr-2 text-primary"></i> Kapasitas: 14 Orang</p>
+        <div class="flex items-center mb-4">
+            <span class="text-2xl font-bold text-primary">Rp 1.900.000</span>
+            <span class="text-gray-500 ml-2">/hari</span>
+        </div>
+
+        <details class="mb-4">
+            <summary class="font-medium text-secondary cursor-pointer flex items-center">
+                <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Harga
+            </summary>
+            <div class="mt-3">
+                <table class="w-full text-sm border-collapse">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="py-2 px-3 text-left border">Destinasi</th>
+                            <th class="py-2 px-3 text-right border">Harga</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td class="py-2 px-3 border">Bandung Area</td><td class="py-2 px-3 text-right border">Rp 1.900.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Lembang</td><td class="py-2 px-3 text-right border">Rp 2.200.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Ciwidey</td><td class="py-2 px-3 text-right border">Rp 2.400.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Pengalengan</td><td class="py-2 px-3 text-right border">Rp 2.700.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Bandara Soetta</td><td class="py-2 px-3 text-right border">Rp 3.000.000</td></tr>
+                        <tr><td class="py-2 px-3 border">Luar Kota</td><td class="py-2 px-3 text-right border">Tanyakan Admin</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </details>
+
+        <div class="mb-4">
+            <strong>Harga Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Mobil</li>
+                <li>BBM</li>
+                <li>Driver dan Kernet</li>
+            </ul>
+        </div>
+        <div class="mb-4">
+            <strong>Harga Tidak Termasuk:</strong>
+            <ul class="list-disc list-inside">
+                <li>Tol dan Parkir</li>
+                <li>Makan</li>
+                <li>Inap (khusus luar kota)</li>
+                <li>Tips Kru</li>
+            </ul>
+        </div>
+        
+        <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+    </div>
+</div>
+
+<!-- Paket Tambahan -->
+<div class="vehicle-card bg-white rounded-xl overflow-hidden border border-gray-200 transition duration-300 p-6 mb-6">
+    <h3 class="text-xl font-bold text-secondary mb-4">Paket Tambahan</h3>
+    <details class="mb-4">
+        <summary class="font-medium text-secondary cursor-pointer flex items-center">
+            <i class="fas fa-info-circle mr-2 text-primary"></i> Detail Paket
+        </summary>
+        <div class="mt-3">
+            <table class="w-full text-sm border-collapse">
+                <thead class="bg-gray-100">
+                    <tr>
+                        <th class="py-2 px-3 text-left border">Paket</th>
+                        <th class="py-2 px-3 text-right border">Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="py-2 px-3 border">Jaga Drop Bay</td>
+                        <td class="py-2 px-3 text-right border">Rp 2.500.000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-3 border">Paket JATENG</td>
+                        <td class="py-2 px-3 text-right border">Rp 5.000.000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-3 border">Surabaya Drop</td>
+                        <td class="py-2 px-3 text-right border">Rp 3.500.000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-3 border">Paket JATIM</td>
+                        <td class="py-2 px-3 text-right border">Rp 7.500.000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-3 border">Bali Drop</td>
+                        <td class="py-2 px-3 text-right border">Rp 5.000.000</td>
+                    </tr>
+                    <tr>
+                        <td class="py-2 px-3 border">Paket Wisata</td>
+                        <td class="py-2 px-3 text-right border">Rp 11.500.000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </details>
+    <div class="mb-4">
+        <strong>Harga Termasuk:</strong>
+        <ul class="list-disc list-inside">
+            <li>Mobil</li>
+            <li>BBM</li>
+            <li>Driver dan Kernet</li>
+        </ul>
+    </div>
+    <div class="mb-4">
+        <strong>Harga Tidak Termasuk:</strong>
+        <ul class="list-disc list-inside">
+            <li>Tol dan Parkir</li>
+            <li>Makan</li>
+            <li>Inap (khusus luar kota)</li>
+            <li>Tips Kru</li>
+        </ul>
+    </div>
+    <!-- Tambahan kode -->
+        <div class="mb-4">
+            <p class="text-green-600 mb-1"><i class="fas fa-check-circle mr-2"></i> Termasuk: Mobil, Driver, Free Wifi</p>
+            <p class="text-red-500"><i class="fas fa-times-circle mr-2"></i> Tidak Termasuk: Tol & parkir, Makan, Tips (luar kota)</p>
+        </div>
+        <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="block w-full bg-primary hover:bg-green-700 text-white text-center py-2 rounded-lg font-medium transition">
+            <i class="fas fa-phone-alt mr-2"></i>Pesan Sekarang
+        </a>
+</div>
+
+
+                    </div>
+                </div>
+            </div>
+            </section>
+            
+    <!-- Contact and CTA Section -->
+    <section id="kontak-cta" class="py-16 bg-primary text-white mt-16">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Tidak menemukan mobil yang Anda inginkan?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Kami memiliki lebih banyak pilihan armada. Hubungi kami untuk konsultasi kebutuhan perjalanan Anda.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://api.whatsapp.com/send/?phone=6287828771188&text=Halo%20Ded%27s%20Travel&type=phone_number&app_absent=0" class="bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-full font-medium transition shadow-lg">
+                    <i class="fab fa-whatsapp mr-2"></i>WhatsApp
+                </a>
+                <a href="tel:087828771188" class="bg-secondary hover:bg-blue-900 text-white px-8 py-3 rounded-full font-medium transition shadow-lg">
+                    <i class="fas fa-phone-alt mr-2"></i>Telepon Kami
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-16 bg-white">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-4">Kepuasan Pelanggan Adalah Kebanggaan Kami</h2>
+                <div class="flex items-center justify-center">
+                    <div class="flex mr-2">
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                        <i class="fas fa-star text-yellow-400 text-xl"></i>
+                    </div>
+                    <span class="text-gray-700 font-medium">5,0 dari 211 ulasan</span>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="testimonial-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-gray-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-secondary">Mega Istiningrum</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Layanan yang sangat memuaskan dan cepat respon. Recomended untuk tour di Bandung! Driver ramah dan menguasai rute dengan baik."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-gray-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-secondary">Nabila Nur Amalitalia</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Driver ramah dan armadanya terawat, perjalanan jadi nyaman. Harga juga bersaing dibandingkan dengan layanan sejenis."
+                    </p>
+                </div>
+                
+                <div class="testimonial-card p-6 rounded-xl">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center mr-4">
+                            <i class="fas fa-user text-gray-500 text-xl"></i>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-secondary">Galuh Kyra</h4>
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                                <i class="fas fa-star text-yellow-400 text-sm"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 italic">
+                        "Harga bersahabat dengan kualitas layanan terbaik. Sudah beberapa kali menggunakan jasa mereka dan selalu puas."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Map -->
+    <section id="maps" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-secondary mb-2">Lokasi Kami</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Kunjungi kantor kami atau hubungi untuk informasi lebih lanjut</p>
+            </div>
+            
+            <div class="flex flex-col lg:flex-row gap-8">
+                <div class="lg:w-2/3">
+                    <div class="rounded-xl overflow-hidden shadow-lg">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d26579.978745926943!2d107.48500258168657!3d-6.87131613798767!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTAnMzIuMCJTIDEwN8KwMjknNDYuMyJF!5e1!3m2!1sen!2sus!4v1752026444004!5m2!1sen!2sus" 
+                            width="100%" 
+                            height="450" 
+                            style="border:0;" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade" 
+                            title="Peta lokasi Ded's Tour and Travel Bandung">
+                        </iframe>
+                    </div>
+                </div>
+                
+                <div class="lg:w-1/3 bg-white p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold text-secondary mb-4">Kontak Kami</h3>
+                    <address class="not-italic">
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-map-marker-alt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-800">Ded's Tour and Travel</p>
+                                <p class="text-gray-600">Kota Bandung, Jawa Barat</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-phone-alt text-primary mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-800">Telepon</p>
+                                <p class="text-gray-600">0878 2877 1188</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start mb-4">
+                            <i class="fas fa-envelope text-primary mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-800">Email</p>
+                                <p class="text-gray-600">info@dedstourtravel.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-primary mt-1 mr-3"></i>
+                            <div>
+                                <p class="font-medium text-gray-800">Jam Operasional</p>
+                                <p class="text-gray-600">Senin - Minggu</p>
+                                <p class="text-gray-600">08:00 - 22:00 WIB</p>
+                            </div>
+                        </div>
+                    </address>
+                    
+                    <div class="mt-6">
+                        <h4 class="font-bold text-secondary mb-3">Ikuti Kami</h4>
+                        <div class="flex space-x-3">
+                            <a href="#" class="w-10 h-10 bg-blue-600 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-pink-600 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-blue-400 text-white rounded-full flex items-center justify-center">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-secondary text-white py-8 mt-auto">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <a href="#" class="flex items-center">
+                        <img src="assets/logo.png" alt="Ded's Tour and Travel Logo" class="h-10">
+                    </a>
+                    <p class="mt-2 text-gray-300 text-sm">Layanan Tour & Rental Mobil Terbaik di Bandung</p>
+                </div>
+
+                
+                <div class="flex flex-wrap gap-4">
+                    <a href="#" class="text-gray-300 hover:text-white transition">Kebijakan Privasi</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">Syarat & Ketentuan</a>
+                    <a href="#" class="text-gray-300 hover:text-white transition">FAQ</a>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-6 pt-6 text-center text-gray-400 text-sm">
+                <p>&copy; 2025 Ded's Tour and Travel. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/6287828771188" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-xl z-40 transition">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
